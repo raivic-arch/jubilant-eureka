@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Finance Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Finance Tracker</h1>
+
+            <a href="#dashboard">Dashboard</a>
+            <a href="#transactions">Transactions</a>
+            <a href="#add-transaction">Add Transaction</a>
+        </nav>
+      <button class="cartCount">cartCount</button>
+      
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <h2>Dashboard</h2>
+
+            <div class="dashboard-cards">
+
+                <div class="card">
+                    <h3>Total Balance</h3>
+                    <p id="totalBalance">KES 0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <p id="totalIncome">KES 0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">KES 0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Transaction -->
+        <section id="add-transaction">
+
+            <h2>Add Transaction</h2>
+
+            <form id="transactionForm">
+
+                <label for="transactionType">
+                    Transaction Type
+                </label>
+
+                <select id="transactionType" required>
+                    <option value="">Select type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+
+                <label for="description">
+                    Description
+                </label>
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="e.g. Salary"
+                    required
+                >
+
+
+                <label for="amount">
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="e.g. 50000"
+                    min="0"
+                    required
+                >
+
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" required>
+                    <option value="">Select category</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                <label for="date">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Transaction
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Transactions -->
+        <section id="transactions">
+
+            <h2>Transactions</h2>
+
+            <!-- Filter -->
+            <div class="filter">
+                <label for="transactionFilter">
+                    Filter:
+                </label>
+
+                <select id="transactionFilter">
+                    <option value="all">All</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expenses</option>
+                </select>
+            </div>
+
+
+            <!-- Transaction list -->
+            <div id="transactionList">
+
+                <p>No transactions yet.</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
